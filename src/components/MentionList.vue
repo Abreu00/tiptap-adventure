@@ -40,7 +40,6 @@ function onKeyDown({ event }) {
     return true;
   }
 
-  console.log(event.key);
   if (["Enter", "Tab", ' '].includes(event.key)) {
     enterHandler();
     return true;
