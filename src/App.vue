@@ -35,8 +35,11 @@ const editor = useEditor({
 });
 
 function handleClick(char: "@" | "#") {
-  console.log(editor.value?.getHTML())
-  editor.value?.commands.insertContent(char);
+  if (editor.value?.getText().endsWith(" ")) {
+    editor.value?.commands.insertContent(char);
+  } else {
+    editor.value?.commands.insertContent(" " + char);
+  }
   editor.value?.commands.focus();
 }
 </script>
